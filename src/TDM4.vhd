@@ -77,7 +77,13 @@ architecture behavioral of TDM4 is
 begin	
 	
 	-- PROCESSES ----------------------------------------
-	
+	clk_process : process
+	begin
+		w_clk <= '0';
+		wait for k_clk_period/2;
+		w_clk <= '1';
+		wait for k_clk_period/2;
+	end process clk_process;
 	-- 2 Bit counter Process ----------------------------
 	-- counter rolls over automatically
 	-- asynchronous reset to "00"
