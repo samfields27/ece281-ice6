@@ -69,6 +69,10 @@ end TDM4;
 architecture behavioral of TDM4 is
 
 	signal   f_sel		 : unsigned(1 downto 0)	:= "00"; -- 2 bit counter output to select MUX input
+	constant k_clk_period : time := 20 ns;
+	constant k_IO_width : natural := 4;
+	signal w_D3, w_D2, w_D1, w_D0 : std_logic := '0';
+	signal w_clk, w_reset, w_stop, w_up_down : std_logic := '0';
 	
 begin	
 	
